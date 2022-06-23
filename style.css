@@ -1,141 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 :root {
-    --Softblue: hsl(215, 51%, 70%);
-    --Cyan: hsl(178, 100%, 50%);
-    --Bgcolor: hsl(217, 54%, 11%);
-    --CardBG: hsl(216, 50%, 16%);
-    --line: hsl(215, 32%, 27%);
-    --white: hsl(0, 0%, 100%); 
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --mainBG: hsl(217, 54%, 11%);
+  --cardBG: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
 
-    --fontpadrao: 'Outfit', sans-serif;
+  --fontPadrao: 'Outfit', sans-serif;
+
+  font-size: 62.5%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
 
 body {
-        background-color: var(--Bgcolor);
-        font-family: var(--fontpadrao);
-        font-size: 18px;
-    }
-    
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainBG);
+  font-family: var(--fontPadrao);
+  font-size: 1.8rem;
+}
+
 .card {
-        background-color: var(--CardBG);
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        width: 300px;
-        height: 490px;
-        border-radius: 10px;
-        margin: 0 auto;
-        margin-top: 60px;
-        align-content: center;
-    }
-
-.preview .img-responsive {
-        width: 240px;
-        border-radius: 10px;
-        margin: 30px 30px 0px 30px;
-        position: relative;
- }
-
-.preview .view{
-    position: absolute;
-    height: 240px;
-    width: 240px;
-    cursor: pointer;
-    border-radius: 10px;
-    left: 41.2%;
-    top: 14%;
-    opacity: 0.3;
-    display: none;
+  width: 36rem;
+  background-color: var(--cardBG);
+  border-radius: 2rem;
+  padding: 3rem;
 }
 
-.preview:hover .view{
-    cursor: pointer;
-    display: block;
-    background-color: var(--Cyan);
+.card .card-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
 }
-    
-h2 {
-        margin-left: 30px;
-        font-size: 20px;
-        color: var(--white);
-    }
-    
-h2:hover {
-        color: var(--Cyan);
-        cursor: pointer;
-    }
-    
-.post-phrase {
-        margin-left: 30px;
-        font-size: 15px;
-        color: var(--Softblue);
-    }
-    
-.post-date {
-        display: inline-flex;
-        margin-left: 30px;
-        margin-bottom: 15px;
-    }
-    
-.post-date .date {
-        color: var(--Cyan);
-        padding: 1px;
-        font-size: 15px;
-    }
-    
-.post-day{
-        display: inline-flex;  
-        margin-left: 60px;
-        margin-bottom: 15px;   
-    }
-    
-.post-day .day{
-        color: var(--Softblue);
-        padding: 1px;
-        font-size: 15px;
-    }
-    
-.post-autor {
-        display: flex;
-        margin: 10px 30px 0px 30px;
-        align-items: center;
-        border-top: 1px solid var(--line);
-    }
-    
-.post-autor img {
-        width: 32px;
-        height: 32px;
-        border: 2px solid var(--white);
-        border-radius: 32px;
-    }
-    
-.post-autor p {
-        font-size: 15px;
-        margin-left: 10px;
-        color: var(--Softblue);
-    }
-    
-.post-autor a{
-        text-decoration: none;
-        color: var(--white);
-    }
-    
-.post-autor a:hover {
-        color: var(--Cyan);
-    }
-    
-.attribution { 
-        font-size: 11px; 
-        text-align: center;
-        color: var(--Softblue);
-        margin-top: 15px;
-    }
-    
-.attribution a { 
-        text-decoration: none;
-        color: var(--white); 
-    }
 
-.attribution a:hover {
-    color: var(--Cyan);
+.card .card-preview .post {
+  width: 100%;
+  border-radius: 1rem;
 }
+
+.card .card-preview .view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  background-color: var(--Cyan);
+  border-radius: 1rem;
+  width: 30.2rem;
+  height: 30.2rem;
+}
+
+.card .card-preview:hover .view {
+  opacity: 0.5;
+}
+
+.card .post-info h3 {
+  margin-top: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: .4s;
+}
+
+.card .post-info h3:hover {
+  color: var(--Cyan);
+}
+
+.card .post-info p {
+  color: var(--Soft-blue);
+  margin-top: 2rem;;
+}
+
+.card .data-post {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .data-post .data-eth, .data-day {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.card .data-post .data-eth span {
+  color: var(--Cyan);
+}
+
+.card .data-post .data-day span {
+  color: var(--Soft-blue);
+}
+
+.post-footer {
+  border-top: .1rem solid var(--line);
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.post-footer img {
+  width: 3.2rem;
+  border: .2rem solid var(--white);
+  border-radius: 3.2rem;
+}
+
+.post-footer p, .attribution span {
+  color: var(--Soft-blue);
+}
+
+.post-footer a {
+  color: var(--white);
+  transition: .4s;
+}
+
+.post-footer a:hover {
+  color: var(--Cyan);
+}
+
+.attribution { font-size: 1.4rem; text-align: center; margin-top: 1rem; }
+.attribution a { color: var(--Cyan)}
